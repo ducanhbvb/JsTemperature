@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature</title>
+</head>
+<body>
+<input id="temperature"type="text">
+<input type="button"value="Clich Me!"onclick="change1()">
+<input id="result"type="text">
+<script>
+    this.temperrature=function (celsius) {
+        this.C=celsius;
+        this.F=9/5*celsius + 32;
+        this.K=celsius + 273.15;
+        this.getc=function () {
+            return this.C;
+        }
+        this.getf=function () {
+            return this.F;
+        }
+        this.getk=function () {
+            return this.K;
+        }
+    }
+function change1() {
+    let celsius=parseInt(document.getElementById("temperature").value);
+console.log(celsius);
+    let change =new temperrature(celsius);
+    let C = change.getc();
+    let F = change.getf();
+    let K = change.getk();
+    document.getElementById("result").value= C + " Celsius =" + F + " Fahrenheit =" + K + " Kelvin ";
+}
+</script>
+</body>
+</html>
